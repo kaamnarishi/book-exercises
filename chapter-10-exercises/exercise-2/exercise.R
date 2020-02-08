@@ -17,7 +17,7 @@ adjustments <- runif(100, -5000, 10000)
 
 # Create a data frame `salaries` by combining the 3 vectors you just made
 # Remember to set `stringsAsFactors=FALSE`!
-salaries <- data.frame(employees, salaries_2017, adjustments)
+salaries <- data.frame(employees, salaries_2017, adjustments, stringsAsFactors = FALSE)
 View(salaries)
 # Add a column to the `salaries` data frame that represents each person's
 # salary in 2018 (e.g., with the salary adjustment added in).
@@ -42,7 +42,7 @@ print(nrow(salaries[salaries$got_raise == TRUE, ]))
 salaries[salaries$adjustments == max(salaries$adjustments), "adjustments"]
 
 # What was the "name" of the employee who received the highest raise?
-
+salaries[salaries$adjustments == max(salaries$adjustments), "employees"]
 
 # What was the largest decrease in salaries between the two years?
 
